@@ -1,7 +1,6 @@
 import numpy as np, cv2
 
-def preprocessing(no):  # 검출 전처리
-    image = cv2.imread('C:/Users/asia/Desktop/Medical_AI/OpenCV/source/chap11/images/face/%02d.jpg' %no, cv2.IMREAD_COLOR)                          # 00-59.jpg 이미지 파일 순서대로 읽기
+def preprocessing(image):  # 검출 전처리 (Streamlit에서 업로드된 이미지 배열을 받음)
     if image is None: return None, None
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # 명암도 영상 변환
     gray = cv2.equalizeHist(gray)                   # 히스토그램 평활화
